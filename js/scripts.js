@@ -1,9 +1,14 @@
 const productos = [];
 const carrito = [];
 let opcion = 0;
-const listProductos = document.getElementById("listProductos");
-const add1 = document.querySelector("#add1");
+
+const listadoProductos = document.getElementsByClassName("producto");
+
 const verCarro = document.querySelector("#carrito");
+
+const titulo = document.getElementById("titulo");
+titulo.innerText = "PCshop";
+
 class Producto {
   constructor(id, nombre, precio) {
     this.id = id;
@@ -11,6 +16,7 @@ class Producto {
     this.precio = precio;
   }
   precioFinal() {
+    let IVA = 1.21;
     return parseFloat((this.precio * IVA).toFixed(2));
   }
 }
@@ -26,17 +32,26 @@ function generarCarrito() {
   carrito.push(new Producto(0001, "MOUSE GENIUS", 500));
   carrito.push(new Producto(0002, "TECLADO LOGITECH", 900));
   carrito.push(new Producto(0003, "COOLER AUREOX", 1200));
+  return carrito;
 }
+function cargarProductos() {
+  listadoProductos.innerHTML = "";
 
-generarProductos();
-generarCarrito();
-
-function mostrarProductos() {
-  listProductos.innerHTML = "";
   for (const producto of productos) {
-    listProductos.innerText = producto;
+    listadoProductos.innerHTML +=
+      "<li>" +
+      producto.nombre +
+      "-" +
+      producto.precio +
+      "<button id='add" +
+      producto.id +
+      "'> Agregar al carrito</button></li>";
   }
 }
+generarProductos();
+generarCarrito();
+cargarProductos();
+
 function elegirProducto() {
   opcion = prompt("elija producto del 1 al 6");
   opcion -= 1;
@@ -84,7 +99,5 @@ function crearID() {
 }
 
 function verCarrito() {
-  carrito.forEach((prod) => {
-    console.log(carrito.nombre + " " + carrito.precio);
-  });
+  console.table(carrito);
 }
