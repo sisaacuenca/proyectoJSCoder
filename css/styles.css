@@ -2,11 +2,31 @@
   margin: 0;
   padding: 0;
 }
-img {
-  width: 250px;
-  height: 320px;
+body {
+  background-color: aqua;
 }
-.producto {
-  text-align: center;
+header {
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: auto 50px;
+  grid-template-areas: "titulo boton";
+}
+header #titulo {
+  color: rgb(28, 28, 214);
+  grid-area: titulo;
+}
+header #irCarrito {
+  grid-area: boton;
+}
+#grid-productos {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+#producto {
   border-radius: 10%;
+}
+
+.carrito {
+  text-decoration: none;
 }

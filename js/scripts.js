@@ -1,62 +1,7 @@
-const productos = [];
-const carrito = [];
-let opcion = 0;
-
-const listadoProductos = document.getElementsByClassName("producto");
-
-const verCarro = document.querySelector("#carrito");
-
-const titulo = document.getElementById("titulo");
-titulo.innerText = "PCshop";
-
-class Producto {
-  constructor(id, nombre, precio) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = precio;
-  }
-  precioFinal() {
-    let IVA = 1.21;
-    return parseFloat((this.precio * IVA).toFixed(2));
-  }
-}
-function generarProductos() {
-  productos.push(new Producto(0001, "MOUSE GENIUS", 500));
-  productos.push(new Producto(0002, "TECLADO LOGITECH", 900));
-  productos.push(new Producto(0003, "COOLER AUREOX", 1200));
-  productos.push(new Producto(0004, "PARLANTES NOGA", 350));
-  productos.push(new Producto(0005, "PROCESADOR INTEL CELERON", 2900));
-  productos.push(new Producto(0006, "GEFORCE GT1030", 5000));
-}
-function generarCarrito() {
-  carrito.push(new Producto(0001, "MOUSE GENIUS", 500));
-  carrito.push(new Producto(0002, "TECLADO LOGITECH", 900));
-  carrito.push(new Producto(0003, "COOLER AUREOX", 1200));
-  return carrito;
-}
-function cargarProductos() {
-  listadoProductos.innerHTML = "";
-
-  for (const producto of productos) {
-    listadoProductos.innerHTML +=
-      "<li>" +
-      producto.nombre +
-      "-" +
-      producto.precio +
-      "<button id='add" +
-      producto.id +
-      "'> Agregar al carrito</button></li>";
-  }
-}
 generarProductos();
 generarCarrito();
 cargarProductos();
-
-function elegirProducto() {
-  opcion = prompt("elija producto del 1 al 6");
-  opcion -= 1;
-  carrito.push(productos[opcion - 1]);
-}
+cargarCarrito();
 
 function addProducto() {
   let id = crearID();
@@ -64,18 +9,18 @@ function addProducto() {
   let precio = parseInt(prompt("ingrese precio del producto"));
   productos.push(new Producto(id, nombre.toUpperCase(), precio));
   return productos;
-  console.log(productos);
 }
 
 function addCarrito(addId) {
-  const existe = productos.some((producto) => producto.id === addId);
+  const existe = productos.some((producto) => producto.id === parseInt(addId));
   if (existe) {
-    carrito.push(productos.find((producto) => producto.id === addId));
+    carrito.push(productos.find((producto) => producto.id === parseInt(addId)));
     console.log();
   } else {
     console.log("no existe el producto solicitado");
   }
-  verCarrito();
+  cargarCarrito();
+  console.table(carrito);
 }
 
 function listarProductos() {
@@ -96,8 +41,4 @@ function buscarProducto() {
 
 function crearID() {
   return parseInt(Math.random() * 10000);
-}
-
-function verCarrito() {
-  console.table(carrito);
 }

@@ -8,6 +8,7 @@
     <!--link a hoja de estilos css-->
     <link rel="stylesheet" href="css/styles.css">
     <!--JAVASCRIPT-->
+    <script defer src="js/variables.js"></script>
     <script defer src="js/scripts.js"></script>
 
     <title>Tienda PCSHOP</title>
@@ -18,17 +19,22 @@
 
     <header>
         <h1 id="titulo">titulo</h1>
-        <button id="carrito">Ver Carrito</button>
+        <button id="irCarrito">Ver Carrito</button>
     </header>
     <main>
-        <div>
-            <ul class="producto">
-                <li>Producto 1 - precio<button>agregar al carrito</button></li>
-                <li>Producto 2 - precio<button>agregar al carrito</button></li>
-                <li>Producto 3 - precio<button>agregar al carrito</button></li>
-                <li>Producto 4 - precio<button>agregar al carrito</button></li>
-                <li>Producto 5 - precio<button>agregar al carrito</button></li>
-                <li>Producto 6 - precio<button>agregar al carrito</button></li>
+        <div class="grid-productos">
+            <ul id="listProducto">
+                <li>Producto 1 - precio<button id="add1">agregar al carrito</button></li>
+                <li>Producto 2 - precio<button id="add2">agregar al carrito</button></li>
+                <li>Producto 3 - precio<button id="add3">agregar al carrito</button></li>
+                <li>Producto 4 - precio<button id="add4">agregar al carrito</button></li>
+                <li>Producto 5 - precio<button id="add5">agregar al carrito</button></li>
+                <li>Producto 6 - precio<button id="add5">agregar al carrito</button></li>
+            </ul>
+        </div>
+        <div id="carrito">
+            <h2>carrito</h2>
+            <ul>
 
             </ul>
         </div>
