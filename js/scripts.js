@@ -14,7 +14,7 @@ function addProducto() {
 function addCarrito(addId) {
   const existe = productos.some((producto) => producto.id === parseInt(addId));
   if (existe) {
-    carrito.push(productos.find((producto) => producto.id === parseInt(addId)));
+    carrito.push(productos.find((producto) => producto.id === addId));
     console.log();
   } else {
     console.log("no existe el producto solicitado");
@@ -42,3 +42,18 @@ function buscarProducto() {
 function crearID() {
   return parseInt(Math.random() * 10000);
 }
+add1.onclick = () => {
+  addCarrito(1);
+};
+add2.onclick = () => {
+  addCarrito(2);
+};
+add3.onclick = () => {
+  addCarrito(3);
+};
+add4.onclick = () => {
+  addCarrito(4);
+};
+add5.onclick = () => {
+  addCarrito(5);
+};
