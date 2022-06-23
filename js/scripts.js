@@ -1,13 +1,13 @@
 generarProductos();
 generarCarrito();
 cargarProductos();
-cargarCarrito();
 
 function addProducto() {
   let id = crearID();
   let nombre = prompt("ingrese nombre del producto");
   let precio = parseInt(prompt("ingrese precio del producto"));
   productos.push(new Producto(id, nombre.toUpperCase(), precio));
+  console.table(productos);
   return productos;
 }
 
@@ -23,16 +23,6 @@ function addCarrito(addId) {
   console.table(carrito);
 }
 
-function listarProductos() {
-  productos.forEach((producto) => {
-    console.table(producto);
-  });
-}
-function listarCarrito() {
-  carrito.forEach((carro) => {
-    console.table(carro);
-  });
-}
 function buscarProducto() {
   let idBuscada = parseInt(prompt("ingrese la ID del producto a buscar"));
   const buscado = productos.find((producto) => producto.id === idBuscada);
@@ -56,4 +46,10 @@ add4.onclick = () => {
 };
 add5.onclick = () => {
   addCarrito(5);
+};
+irCarrito.onclick = () => {
+  cargarCarrito();
+};
+hideCarrito.onclick = () => {
+  ocultarCarrito();
 };
