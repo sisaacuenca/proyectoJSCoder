@@ -1,8 +1,4 @@
-generarProductos();
-generarCarrito();
-cargarProductos();
-
-function addProducto() {
+/*function addProducto() {
   let id = crearID();
   let nombre = prompt("ingrese nombre del producto");
   let precio = parseInt(prompt("ingrese precio del producto"));
@@ -32,24 +28,4 @@ function buscarProducto() {
 function crearID() {
   return parseInt(Math.random() * 10000);
 }
-add1.onclick = () => {
-  addCarrito(1);
-};
-add2.onclick = () => {
-  addCarrito(2);
-};
-add3.onclick = () => {
-  addCarrito(3);
-};
-add4.onclick = () => {
-  addCarrito(4);
-};
-add5.onclick = () => {
-  addCarrito(5);
-};
-irCarrito.onclick = () => {
-  cargarCarrito();
-};
-hideCarrito.onclick = () => {
-  ocultarCarrito();
-};
+*/

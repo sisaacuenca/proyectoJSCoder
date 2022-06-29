@@ -1,7 +1,6 @@
-const productos = [];
+/*import { productos } from "./stock.js";
 const carrito = [];
 
-const listadoProductos = document.getElementById("listProducto");
 const listCarro = document.getElementById("carrito");
 
 const add1 = document.getElementById("add1");
@@ -14,54 +13,55 @@ const hideCarrito = document.getElementById("hideCarrito");
 
 const titulo = document.getElementById("titulo");
 titulo.innerText = "PCSHOP";
+add1.onclick = () => {
+  addCarrito(1);
+};
+add2.onclick = () => {
+  addCarrito(2);
+};
+add3.onclick = () => {
+  addCarrito(3);
+};
+add4.onclick = () => {
+  addCarrito(4);
+};
+add5.onclick = () => {
+  addCarrito(5);
+};
+irCarrito.onclick = () => {
+  cargarCarrito();
+};
+hideCarrito.onclick = () => {
+  ocultarCarrito();
+};
 
 class Producto {
-  constructor(id, nombre, precio) {
+  constructor(id, nombre, precio, stock) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
+    this.stock = stock;
   }
   precioFinal() {
     const IVA = 1.21;
     return parseFloat((this.precio * IVA).toFixed(2));
   }
 }
-function generarProductos() {
-  productos.push(new Producto(0001, "MOUSE GENIUS", 500));
-  productos.push(new Producto(0002, "TECLADO LOGITECH", 900));
-  productos.push(new Producto(0003, "COOLER AUREOX", 1200));
-  productos.push(new Producto(0004, "PROCESADOR INTEL CELERON", 2900));
-  productos.push(new Producto(0005, "GEFORCE GT1030", 5000));
-}
-function generarCarrito() {
-  carrito.push(new Producto(0001, "MOUSE GENIUS", 500));
-  carrito.push(new Producto(0002, "TECLADO LOGITECH", 900));
-  carrito.push(new Producto(0003, "COOLER AUREOX", 1200));
-  return carrito;
-}
-function cargarProductos() {
-  listadoProductos.innerHTML = "<h2>Nuestros Productos</h2>";
 
-  for (const producto of productos) {
-    const div = document.createElement("div");
-    div.id = producto.id;
-    div.innerText = producto.nombre + "-" + producto.precioFinal();
-    div.innerHTML +=
-      "<button id='add" + producto.id + "'>agregar al carrito</button>";
 
-    listadoProductos.append(div);
-  }
-}
 function cargarCarrito() {
   listCarro.innerHTML =
-    "<h2>CARRITO<button id ='hideCarrito'>Ocultar Carrito</button></h2>";
-  for (const carro of carrito) {
+    '<h2>CARRITO<button id ="hideCarrito">Ocultar Carrito</button></h2>';
+  carrito.forEach((carro) => {
     const li = document.createElement("li");
     li.id = carro.id;
     li.innerText = carro.nombre + "-" + carro.precioFinal();
     listCarro.append(li);
-  }
+  });
 }
 function ocultarCarrito() {
   listCarro.innerHTML = "";
 }
+
+mostrarProductos(productos);
+*/
