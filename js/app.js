@@ -22,7 +22,13 @@ const mostrarProductos = (productos) => {
     const boton = document.getElementById(`boton${producto.id}`)
     boton.addEventListener("click", () => {
       carritoMenu(producto.id)
-      alert(`se agrego ${producto.nombre}`);
+      swal({
+        title: `${producto.nombre}`,
+        text: "Se agrego exitosamente al carrito",
+        icon: "success",
+        button: "Confirmar",
+      });
+
     });
   });
 };

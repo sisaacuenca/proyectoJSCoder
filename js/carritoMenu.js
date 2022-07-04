@@ -16,8 +16,8 @@ export const carritoMenu = (productoId) => {
     div.innerHTML +=
       ` <div class="card" style="width: 18rem;">
                    <div class="card=body">
-                        <h5 class=card-title>$ ${producto.nombre}</h5>
-                        <p class="card-text">precio:${producto.precio}</p> 
+                        <h5 class=card-title>${producto.nombre}</h5>
+                        <p class="card-text">precio:$  ${producto.precio}</p> 
                         <button class="btn btn--primary" id=eliminar${producto.id}>comprar</button>
                    </div>
       </div>`;
