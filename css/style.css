@@ -10,31 +10,33 @@ html, body{
  height: 100%;
  padding: 2px;
 }
+
 body{
   background-color: aquamarine;
 }
+
 header{
-    height: 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 1rem;
+    
+    
     background-color: bisque;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     color: #000;
 }
-header nav {
-        position: relative;
-        right: 30px;
-}
+
 
 header h1{
     position: relative;
     left: 20px;
 }
+
+
 main{
   background-color: beige;
 }
-
+footer{
+  background-color: blanchedalmond;
+}
 #producto-contenedor {
     display: grid;
     margin: 90px auto;
@@ -84,7 +86,7 @@ main{
   z-index: 5;
 }
 
-.modal-carrito{
+.modal-resumen{
   width:auto;
   height: auto;
   background-color: aquamarine;

@@ -1,7 +1,7 @@
 import { productos } from './stock.js'
 import { carritoMenu } from "./carritoMenu.js"
-let contCarrito = 0;
-
+let contCarrito = 0
+let sumPrecio = 0
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
   productos.forEach((producto) => {
@@ -30,9 +30,11 @@ const mostrarProductos = (productos) => {
         button: "Confirmar",
       });
       contCarrito++
+      sumPrecio += (producto.precio) * 1.21
       const botonCarrito = document.getElementById("contador-carrito")
       botonCarrito.innerText = contCarrito
     });
   });
 };
 mostrarProductos(productos);
+export { contCarrito, sumPrecio }
