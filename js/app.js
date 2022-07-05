@@ -1,5 +1,6 @@
 import { productos } from './stock.js'
 import { carritoMenu } from "./carritoMenu.js"
+let contCarrito = 0;
 
 const mostrarProductos = (productos) => {
   const contenedorProductos = document.getElementById("producto-contenedor");
@@ -11,7 +12,7 @@ const mostrarProductos = (productos) => {
           <img src="${producto.img}" class="card-img-top" alt="imagen representativa de producto">
           <div class="card-body">
               <h5 class="card-title">${producto.nombre}</h5>
-              <p class="card-text">Precio:$ ${producto.precio}</p>
+              <p class="card-text">Precio:$ ${(producto.precio) * 1.21}</p>
               <button class="btn btn-primary" id=boton${producto.id}>Comprar</button>
           </div>
       </div>`
@@ -28,7 +29,9 @@ const mostrarProductos = (productos) => {
         icon: "success",
         button: "Confirmar",
       });
-
+      contCarrito++
+      const botonCarrito = document.getElementById("contador-carrito")
+      botonCarrito.innerText = contCarrito
     });
   });
 };

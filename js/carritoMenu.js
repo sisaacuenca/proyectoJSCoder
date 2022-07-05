@@ -9,7 +9,8 @@ export const carritoMenu = (productoId) => {
 
     let producto = productos.find((producto) => producto.id == productoId);
     carritoCompras.push(producto);
-
+    let precioFinal = 0;
+    precioFinal += producto.precio
     producto.cantidad = 1;
     let div = document.createElement("div");
     div.classList.add("productoEnCarrito");
@@ -18,10 +19,11 @@ export const carritoMenu = (productoId) => {
                    <div class="card=body">
                         <h5 class=card-title>${producto.nombre}</h5>
                         <p class="card-text">precio:$  ${producto.precio}</p> 
-                        <button class="btn btn--primary" id=eliminar${producto.id}>comprar</button>
+                        <button class="btn btn-danger" id=eliminar${producto.id}>eliminar</button>
                    </div>
       </div>`;
     carritoContenedor.appendChild(div);
+
   };
   renderProductoCarrito();
 };

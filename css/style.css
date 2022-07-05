@@ -8,6 +8,7 @@
 }
 html, body{
  height: 100%;
+ padding: 2px;
 }
 body{
   background-color: aquamarine;
@@ -84,12 +85,14 @@ main{
 }
 
 .modal-carrito{
-  width: 30rem;
-  height: 10rem;
+  width:auto;
+  height: auto;
   background-color: aquamarine;
 }
 
-
+.modal-title{
+  text-align: center;
+}
 .productoEnCarrito {
   border-left: 5px solid black;
   border-bottom-left-radius: 3px;
