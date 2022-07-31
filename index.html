@@ -15,10 +15,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="js/app.js"></script>
-    <script src="js/stock.js"></script>
-    <script src="js/carritoMenu.js"></script>
-    <script src="js/dropdown.js"></script>
-    <script src="js/finalizarCompra.js"></script>
+
 
 
     <title>Tienda PCSHOP</title>
@@ -30,7 +27,7 @@
     <header>
         <!--NAVBAR-->
         <div class="titulo">
-            <h1>PCSHOP</h1>
+            <h1>PCSHOP <i class="fa-solid fa-desktop"></i></h1>
         </div>
         <nav>
             <ul class="nav justify-content-end">
@@ -41,12 +38,13 @@
                         Carrito <i class="fa-solid fa-cart-shopping"></i> <span id="contador-carrito">0</span>
                     </button>
                     <ul class="dropdown-menu">
-                        <div id="carrito-contenedor"></div>
+                        <div id="cartContainer"></div>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li><button class="btn btn-success" id="finalizar">Finalizar Compra</button>
                             <button class="btn btn-primary" id="cerrar">Cerrar</button>
+                            <button class="btn btn-warning" id="btnVaciar">Vaciar Carrito</button>
                         </li>
                     </ul>
                 </div>
@@ -55,7 +53,10 @@
         </nav>
     </header>
     <!--MAIN-->
-    <main id="producto-contenedor">
+    <main>
+        <div class="row justify-content-center" id="productConteiner">
+
+        </div>
 
         <div class="modal-container" id="modal_container">
             <div class="modal-resumen">
@@ -80,12 +81,11 @@
         </div>
     </footer>
     <script src="js/app.js" type="module"></script>
-    <script defer src="js/stock.js" type="module"></script>
-    <script src="js/dropdown.js" type="module"></script>
+    <!--
     <script src="js/modal.js" type="module"></script>
     <script src="js/carritoMenu.js" type="module"></script>
     <script src="js/finalizarCompra.js" type="module"></script>
-
+-->
 </body>
 
 </html>

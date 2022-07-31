@@ -1,7 +1,7 @@
-import { productos } from "./stock.js";
-import { contCarrito } from "./app.js";
 
-let carritoCompras = [];
+
+
+export let carritoCompras = [];
 
 export const carritoMenu = (productoId) => {
   const carritoContenedor = document.getElementById('carrito-contenedor');
@@ -19,7 +19,7 @@ export const carritoMenu = (productoId) => {
                    <div class="card=body">
                         <h5 class=card-title>${producto.nombre}</h5>
                         <p class="card-text">precio:$  ${(producto.precio) * 1.21}</p> 
-                        <button class="btn btn-primary" id=eliminar${producto.id}>eliminar</button>
+                        <button class="btn btn-danger" id=eliminar${producto.id}>eliminar</button>
                    </div>
       </div>`;
     carritoContenedor.appendChild(div);
@@ -31,6 +31,20 @@ export const carritoMenu = (productoId) => {
       carritoCompras.pop(eliminado)
       contCarrito--
     })
+    const btnVaciar = document.getElementById(`btnVaciar`)
+
+    const actualizarCarrito = () => {
+      carritoContenedor.innerHTML = ""
+      carritoCompras = []
+      contCarrito = 0
+    }
+    btnVaciar.addEventListener('click', () => {
+      carritoCompras.length = 0
+      actualizarCarrito()
+    })
+
+
+
   };
   renderProductoCarrito();
 };
